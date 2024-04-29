@@ -20,7 +20,9 @@ const App = () => {
       </nav> 
       <div>
          Main content
+         github Commit
       </div>
+
     
       </div>);
       

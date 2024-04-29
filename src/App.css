@@ -1,31 +1,31 @@
 .app-wrapper {
+  margin: 0 auto;
   display: grid;
+width:  900px;
 
-  grid-template-areas:
+
+  grid-template-areas: 
   "h h"
-  "n c";
+  "n c ";
 
-
-grid-template-rows: 60px 1fr;
-grid-template-columns: 2fr 10fr
-/* grid-gap: 10px; */
-
+  grid-template-rows: 60px 3fr;
+  grid-template-columns: 2fr 10fr;
+ /* grid-gap: 10px; */
 }
 
 .header {
-  grid-area: h;
-  background-color: blue;
+grid-area: h;
+background-color: aqua;
 }
 .header img {
-  width: 20px;
+  width: 100px;
 }
-
 .nav {
- grid-area: n;
- background-color: antiquewhite;
+grid-area: n;
+background-color: blue;
 }
 
 .content {
- grid-area: c;
- background-color: aqua;
+grid-area: c;
+background-color: coral;
 }

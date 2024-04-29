@@ -13,19 +13,4 @@ width:  900px;
  /* grid-gap: 10px; */
 }
 
-.header {
-grid-area: h;
-background-color: aqua;
-}
-.header img {
-  width: 100px;
-}
-.nav {
-grid-area: n;
-background-color: blue;
-}
 
-.content {
-grid-area: c;
-background-color: coral;
-}

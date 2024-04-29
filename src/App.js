@@ -19,8 +19,7 @@ const App = () => {
       <div>Messages</div>
       </nav> 
       <div>
-         Main content
-         github Commit
+        
       </div>
        <div> public content Developer Pro</div>
        

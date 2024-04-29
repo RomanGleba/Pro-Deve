@@ -22,8 +22,8 @@ const App = () => {
          Main content
          github Commit
       </div>
-
-    
+       <div> public content</div>
+       
       </div>);
       
 }         

@@ -5,24 +5,34 @@ import Navbar from './Components/Navbar/Navbar';
 import Profile from './Components/Profile/Profile';
 import MyPosts from './Components/Profile/MyPosts/MyPosts';
 import Dialogs from './Components/Dialogs/Dialogs';
+import {BrowserRouter, Routes, Route,} from 'react-router-dom';
 
 
 
 
 
-<Profile />
+
+
+
 
 const App = (props) => {
  return (
+ 
  <div className='app-wrapper'>
    <Header />
    <Navbar />
   <div class='app-wrapper-content'>
-  <Dialogs />
-   </div>
-   {/*<Profile />*/}
-      
-      </div>);
+   <BrowserRouter>
+   <Routes>
+      <Route index element={<Dialogs />} />
+      <Route path="/Dialogs" element={<Dialogs />} />
+    <Route path="/Profile" element={<Profile />} />
+   </Routes>
+   </BrowserRouter>
+   
+  </div>
+</div>);      
+   
       
 }         
 

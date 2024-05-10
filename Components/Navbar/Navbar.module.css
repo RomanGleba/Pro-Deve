@@ -1,0 +1,20 @@
+.nav {
+    grid-area: n;
+    background-color: rgb(68, 136, 123);
+    display:  flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #0f172a;
+    
+    }
+
+
+    .item {
+        color: white;
+        
+    }
+
+
+    .item.active {
+        color: gold;
+    }

@@ -13,6 +13,7 @@ width:  900px;
  /* grid-gap: 10px; */
 }
 
+<<<<<<< HEAD
 .app-wrapper-content {
   .content {
     grid-area: c;
@@ -23,3 +24,6 @@ width:  900px;
 
    
 }
+=======
+
+>>>>>>> 530d592119d05e94f587918bd7ab6d2eb4184954

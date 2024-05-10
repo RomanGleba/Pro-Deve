@@ -12,7 +12,7 @@ const Navbar = () => {
     return ( 
      <nav className={s.nav}> 
     <div className={s.item}> 
-       <a href="/profile">Profil</a>
+       <NavLink to="/profile">Profil</NavLink>
             
     </div>
     <div className={`${s.item} ${s.active}`}>

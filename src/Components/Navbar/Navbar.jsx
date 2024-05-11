@@ -8,8 +8,8 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
 
     return  (
-     <nav className={s.nav}> 
-    <div className={s.item}> 
+     <nav className={s.nav}>
+    <div className={s.item}>
        <NavLink to="/profile">Profil</NavLink>
     </div>
     <div className={`${s.item} ${s.active}`}>
@@ -24,8 +24,8 @@ const Navbar = () => {
           <div className={s.item}>
             <a href="/Setting"> Setting</a>
           </div>
-     
-    
+
+
     </nav>
     )
 }

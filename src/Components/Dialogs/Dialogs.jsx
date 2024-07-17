@@ -1,8 +1,9 @@
 import React from 'react';
 import s from './Dialogs.module.css'
+import Profile from '../Profile/Profile';
 
 
-
+<Profile />
         
 
 
@@ -19,7 +20,7 @@ const Dialogs = (props) => {
             Yurii
             </div>
         <div>
-
+  
         </div>
         </div>
 
@@ -28,6 +29,7 @@ const Dialogs = (props) => {
         <div className={s.dialog}>Hi Roma good</div>
       </div>
     </div>
+
     
 
     )

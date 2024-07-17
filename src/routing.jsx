@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "./Layout";
 import Dialogs from './Components/Dialogs/Dialogs';
 import Profile from './Components/Profile/Profile';
+import Navbar from "./Components/Navbar/Navbar";
 export const routing = createBrowserRouter([
     {
         path: "/",
@@ -19,6 +20,8 @@ export const routing = createBrowserRouter([
                 path: "/Profile",
                 element: <Profile />,
             },
+
+            
         ]
     },
 ])

@@ -1,10 +1,14 @@
 import React  from 'react';
 import s from './Header.module.css';
+import Navbar from './Navbar/Navbar';
 const  Header = () => {
-return   <header className={s.header}>
+return  ( 
+<header className={s.header}>
+
     <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR814Wk7AUXXEROar2uxUMkAR55GOKN-qPkS6FVtyaHRg&s'/>
 </header>
 
+)
 
 }
 

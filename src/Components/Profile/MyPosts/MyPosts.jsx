@@ -2,7 +2,7 @@ import React from 'react';
 import s from './MyPosts.module.css';
 import Post from './Posts/Post';
 
-const MyPosts = () => {
+const MyPosts = ({}) => {
     return (
     <div>
     <div>
@@ -18,7 +18,7 @@ const MyPosts = () => {
     <Post message="It's my first post"likesCount='91' />
     <Post message="I like"likesCount='11'/>
 
-
+    
 
 
 

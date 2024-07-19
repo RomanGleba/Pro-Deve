@@ -4,13 +4,11 @@ import './App.css';
 import {routing} from "./routing";
 import Dialogs from './Components/Dialogs/Dialogs';
 
-const App = () => {
+const App = (props) => {
     return (
             <RouterProvider router={routing} />
-
-            
     );
-   
+    
 }
 
 export default App;

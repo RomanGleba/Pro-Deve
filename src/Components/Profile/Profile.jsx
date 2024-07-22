@@ -6,7 +6,6 @@ import Dialogs from '../Dialogs/Dialogs';
 import Avatar from '../Avatar/Avatar';
 import Header from '../Header/Header';
 
-
 const Profile = () => {
     return (
        <div>
@@ -14,9 +13,8 @@ const Profile = () => {
         <Navbar />
         <Avatar />
         
-            
                 <MyPosts />
-           
+     
         
     </div>
     );

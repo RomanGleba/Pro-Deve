@@ -1,24 +1,13 @@
 .dialogs {
-   display: grid;
-   grid-template-columns: 2fr 10fr ;
-}
-
-
- .dialogsItems   {
-    padding: 40px;
+   display: flex;
+   justify-content: space-between;
  }
-
-
- .dialogsItems .active {
-    color:rgb(228, 29, 29)
+ 
+ .dialogsItems {
+   width: 30%;
  }
-
-.messages {
-padding: 20px;
-}
-
-
-
-.messages .message {
-padding: 10px;
-}
+ 
+ .messages {
+   width: 70%;
+ }
+ 

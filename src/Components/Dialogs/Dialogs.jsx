@@ -1,53 +1,66 @@
 import React from 'react';
-import s from './Dialogs.module.css'
-import Profile from '../Profile/Profile';
 import { NavLink } from 'react-router-dom';
-import Navbar from '../Navbar/Navbar';
+import { Box, Container, Paper, List, ListItem, ListItemText, Typography, Avatar, Divider } from '@mui/material';
 
-const DialogItem = (props) => {
-  let path = "/Dialogs/" + props.id;
+const DialogItem = ({ id, name }) => {
+  let path = "/dialogs/" + id;
 
   return (
-    <div className={`${s.dialog} ${s.active}`}>
-      <NavLink to={path}>{props.name}</NavLink>
-    </div>
+    <ListItem button component={NavLink} to={path}>
+      <Avatar alt={name} src={`/static/images/avatar/${id}.jpg`} />
+      <ListItemText primary={name} />
+    </ListItem>
   );
 };
 
-const Message = (props) => {
-  return <div className={s.dialog}>{props.message}</div>;
+const Message = ({ message }) => {
+  return (
+    <ListItem>
+      <ListItemText primary={message} />
+    </ListItem>
+  );
 };
 
-const Dialogs = (props) => {
-  let Dialogchat = [
+const Dialogs = () => {
+  let dialogChat = [
     { id: 1, name: 'Roma' },
     { id: 2, name: 'Yurii' },
   ];
 
-  let Messagechat = [
+  let messageChat = [
     { id: 1, message: 'Hi Yurii, how are you?' },
     { id: 2, message: 'Hi Roma, I am good' },
   ];
 
-  let Dialogelement = Dialogchat.map(d => (
-    <DialogItem key={d.id} name={d.name} id={d.id} />
-  ));
-
-  let Messageelement = Messagechat.map(m => (
-    <Message key={m.id} message={m.message} />
-  ));
-
   return (
-    <div className={s.dialogs}>
-      <div className={s.dialogsItems}>
-        {Dialogelement}
-      </div>
-      <div className={s.messages}>
-        {Messageelement}
-      </div>
-    </div>
+    <Container component="main" maxWidth="md" sx={{ mt: 4 }}>
+      <Paper elevation={3}>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+          <Box sx={{ width: '30%', p: 2 }}>
+            <Typography variant="h6" gutterBottom>
+              Dialogs
+            </Typography>
+            <List>
+              {dialogChat.map(d => (
+                <DialogItem key={d.id} name={d.name} id={d.id} />
+              ))}
+            </List>
+          </Box>
+          <Divider orientation="vertical" flexItem />
+          <Box sx={{ width: '70%', p: 2 }}>
+            <Typography variant="h6" gutterBottom>
+              Messages
+            </Typography>
+            <List>
+              {messageChat.map(m => (
+                <Message key={m.id} message={m.message} />
+              ))}
+            </List>
+          </Box>
+        </Box>
+      </Paper>
+    </Container>
   );
 };
-
 
 export default Dialogs;

@@ -11,7 +11,7 @@ const Settings = () => {
         <label>Theme:</label>
      
         
-       =
+       
       </div>
     </div>
   );

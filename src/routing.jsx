@@ -4,6 +4,7 @@ import Dialogs from './Components/Dialogs/Dialogs';
 import Profile from './Components/Profile/Profile';
 import Navbar from "./Components/Navbar/Navbar";
 import Music from "./Components/Music/Music";
+import Settings from "./Components/Setting/Settings";
 export const routing = createBrowserRouter([
     {
         path: "/",
@@ -26,6 +27,10 @@ export const routing = createBrowserRouter([
                 path: "/Music",
                 element: <Music />,
             },
+            {
+                path: "/Settings",
+                element: <Settings />
+            }
             
           
 

@@ -11,6 +11,7 @@ const Music = () => {
       <div className={styles.playerContainer}>
         <AudioPlayer src="/meduza_feat_onerepublic__leony_-_fire_official_uefa_euro_2024_song_(z3.fm).mp3" />
       </div>
+      
     </div>
   );
 };

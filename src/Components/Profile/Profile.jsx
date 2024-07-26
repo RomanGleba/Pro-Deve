@@ -8,43 +8,9 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import MyPosts from './MyPosts/MyPosts';
-import Navbar from './../Navbar/Navbar';
+import styles from './Profile.module.css'; // Імпортуємо CSS модуль
 
 const theme = createTheme();
-
-const profileStyles = {
-  container: {
-    marginTop: 8,
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  avatar: {
-    width: 100,
-    height: 100,
-  },
-  button: {
-    marginTop: 2,
-  },
-  typographyHeading: {
-    marginTop: 2,
-  },
-  typographySubheading: {
-    marginTop: 1,
-    color: 'textSecondary',
-  },
-  paper: {
-    padding: 3,
-    marginTop: 4,
-    width: '100%',
-  },
-  gridContainer: {
-    marginTop: 4,
-  },
-  paperPosts: {
-    padding: 3,
-  },
-};
 
 const Profile = ({ isAuthenticated }) => {
   const [profileImage, setProfileImage] = useState('/static/images/avatar/1.jpg'); // Дефолтне зображення профілю
@@ -63,26 +29,25 @@ const Profile = ({ isAuthenticated }) => {
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="lg">
-        <Navbar />
-        <Box sx={profileStyles.container}>
+        <Box className={styles.container}>
           <Avatar
-            alt="User Name"
+            alt=""
             src={profileImage}
-            sx={profileStyles.avatar}
+            className={styles.avatar}
           />
           {isAuthenticated && (
-            <Button variant="contained" component="label" sx={profileStyles.button}>
+            <Button variant="contained" component="label" className={styles.button}>
               Upload Photo
               <input type="file" hidden onChange={handleImageUpload} />
             </Button>
           )}
-          <Typography component="h1" variant="h5" sx={profileStyles.typographyHeading}>
+          <Typography component="h1" variant="h5" className={styles.typographyHeading}>
             Roma
           </Typography>
-          <Typography component="h2" variant="body1" sx={profileStyles.typographySubheading}>
+          <Typography component="h2" variant="body1" className={styles.typographySubheading}>
             user@example.com
           </Typography>
-          <Paper elevation={3} sx={profileStyles.paper}>
+          <Paper elevation={3} className={styles.paper}>
             <Typography component="h2" variant="h6" color="primary" gutterBottom>
               About Me
             </Typography>
@@ -90,9 +55,9 @@ const Profile = ({ isAuthenticated }) => {
               This is my first site
             </Typography>
           </Paper>
-          <Grid container spacing={0} sx={profileStyles.gridContainer}>
+          <Grid container spacing={0} className={styles.gridContainer}>
             <Grid item xs={12}>
-              <Paper elevation={3} sx={profileStyles.paperPosts}>
+              <Paper elevation={3} className={styles.paperPosts}>
                 <MyPosts />
               </Paper>
             </Grid>
@@ -104,4 +69,3 @@ const Profile = ({ isAuthenticated }) => {
 };
 
 export default Profile;
-

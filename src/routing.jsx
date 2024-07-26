@@ -3,8 +3,8 @@ import Layout from './Layout';
 import Dialogs from './Components/Dialogs/Dialogs';
 import Profile from './Components/Profile/Profile';
 import Music from './Components/Music/Music';
-import Login from './Components/Login/Login';
-import Register from './Components/Register/Register';
+import Login from './Components/Weblogin/Login';
+import Register from './Components/Weblogin/Register';
 import ProtectedRoute from './ProtectedRoute';
 import News from './Components/News/News';
 
@@ -39,16 +39,20 @@ export const routing = createBrowserRouter([
         ),
       },
       {
-        path: 'login',
-        element: <Login />,
-      },
-      {
         path: 'register',
         element: <Register />,
       },
       {
+        path: 'Login',
+        element: <Login />,
+      },
+      {
         path: 'news',
-        element: <News />,
+        element: (
+        <ProtectedRoute>
+            <News />
+            </ProtectedRoute>
+        ),
       }
      
     ],

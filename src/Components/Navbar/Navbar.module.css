@@ -9,15 +9,19 @@
     position: fixed; 
     top: 0;
     z-index: 1000; 
+    
     }
 
 /* s.item */
     .item {
         color: rgb(182, 34, 34);
-        
+        transition: background-color 0.3s, color 0.3s; 
+        text-decoration: none;
+        color: #ffffff; 
     }
 
 /* s.active */
     .item.active {
         color: gold;
     }
+

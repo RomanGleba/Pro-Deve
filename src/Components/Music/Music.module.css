@@ -1,12 +1,12 @@
 /* src/Music.module.css */
 .music {
   padding: 20px;
-  background-color: #f4f4f4;
+  background-color: #26355c;
   border-radius: 10px;
-  max-width: 600px;
+  max-width: 6000px;
   margin: 0 auto;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,14 +15,14 @@
 .title {
   font-size: 32px;
   margin-bottom: 20px;
-  color: #333;
+  color: #000000;
   font-weight: bold;
 }
 
 .description {
   font-size: 18px;
   margin-bottom: 20px;
-  color: #666;
+  color: #000000;
 }
 
 .image {
@@ -30,7 +30,7 @@
   height: auto;
   margin-bottom: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(233, 0, 0, 0.1);
 }
 
 .playerContainer {

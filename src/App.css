@@ -1,22 +1,15 @@
-.app-wrapper {
-  margin: 100 auto;
-  display: grid;
-width:  900px;
-
-
-  grid-template-areas: 
-  "h h"
-  "n c ";
-
-  grid-template-rows: 60px 3fr;
-  grid-template-columns: 2fr 10fr;
- /* grid-gap: 10px; */
+/* index.css або App.css */
+body {
+  background-color: #26355c; /* Темний фон */
+  color:  #26355c; /* Білий текст */
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
-.app-wrapper-content {
-  .content {
-    grid-area: c;
-    background-color: rgb(101, 19, 14);
-    }
- 
+.container {
+  background-color: #8f9b91;
+  color: #fd3535;
+  min-height: 100vh;
+  padding: 20px;
 }

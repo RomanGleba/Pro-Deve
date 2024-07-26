@@ -1,13 +1,39 @@
-.dialogs {
-   display: flex;
-   justify-content: space-between;
- }
- 
- .dialogsItems {
-   width: 30%;
- }
- 
- .messages {
-   width: 70%;
- }
- 
+/* Dialogs.module.css */
+.dialogsContainer {
+  margin-top: 4rem;
+}
+
+.dialogPaper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dialogList {
+  width: 30%;
+  padding: 1rem;
+}
+
+.messagesContainer {
+  width: 70%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.messageList {
+  flex-grow: 1;
+}
+
+.inputContainer {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.textField {
+  flex-grow: 1;
+}
+
+.sendButton {
+  margin-left: 1rem;
+}
+

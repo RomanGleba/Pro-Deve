@@ -1,0 +1,47 @@
+.container {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url('') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  .avatar {
+    width: 100px;
+    height: 100px;
+    padding: 100px;
+    
+  }
+  
+  .button {
+    margin-top: 2px;
+  }
+  
+  .typographyHeading {
+    margin-top: 2px;
+  }
+  
+  .typographySubheading {
+    margin-top: 1px;
+    color: textSecondary;
+  }
+  
+  .paper {
+    padding: 3px;
+    margin-top: 4px;
+    width: 100%;
+    background-color: #26355c
+  }
+  
+  .gridContainer {
+    margin-top: 4px;
+    background-color: #26355c;
+  }
+  
+  .paperPosts {
+    padding: 3px;
+    background-color: #26355c;
+    
+  }
+  

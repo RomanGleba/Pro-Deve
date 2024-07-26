@@ -1,17 +1,30 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 import s from './Navbar.module.css';
-
-
-
-
+import { Menu, MenuItem, Button } from '@mui/material';
 
 const Navbar = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const navigate = useNavigate();
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleMenuItemClick = (path) => {
+    navigate(path);
+    handleClose();
+  };
+
   return (
     <nav className={s.nav}>
       <div className={s.item}>
         <NavLink 
-          to="/Profile" 
+          to="/profile" 
           className={({ isActive }) => isActive ? `${s.item} ${s.active}` : s.item} 
           end
         >
@@ -20,7 +33,7 @@ const Navbar = () => {
       </div>
       <div className={s.item}>
         <NavLink 
-          to="/Dialogs" 
+          to="/dialogs" 
           className={({ isActive }) => isActive ? `${s.item} ${s.active}` : s.item} 
           end
         >
@@ -29,7 +42,7 @@ const Navbar = () => {
       </div>
       <div className={s.item}>
         <NavLink 
-          to="/News" 
+          to="/news" 
           className={({ isActive }) => isActive ? `${s.item} ${s.active}` : s.item}
         >
           News
@@ -37,7 +50,7 @@ const Navbar = () => {
       </div>
       <div className={s.item}>
         <NavLink 
-          to="/Music" 
+          to="/music" 
           className={({ isActive }) => isActive ? `${s.item} ${s.active}` : s.item}
         >
           Music
@@ -45,15 +58,33 @@ const Navbar = () => {
       </div>
       <div className={s.item}>
         <NavLink 
-          to="/Settings" 
+          to="/settings" 
           className={({ isActive }) => isActive ? `${s.item} ${s.active}` : s.item}
         >
           Settings
         </NavLink>
+      </div>
+      <div className={s.item}>
+        <Button
+          aria-controls="simple-menu"
+          aria-haspopup="true"
+          onClick={handleClick}
+        >
+          sing up and login
+        </Button>
+        <Menu
+          id="simple-menu"
+          anchorEl={anchorEl}
+          keepMounted
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+        >
+          <MenuItem onClick={() => handleMenuItemClick('/login')}>Login</MenuItem>
+          <MenuItem onClick={() => handleMenuItemClick('/register')}>Register</MenuItem>
+        </Menu>
       </div>
     </nav>
   );
 }
 
 export default Navbar;
-

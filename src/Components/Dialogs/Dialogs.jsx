@@ -33,7 +33,7 @@ const Dialogs = () => {
   ];
 
   return (
-    <Container component="main" maxWidth="md" sx={{ mt: 4 }}>
+    <Container component="main" maxWidth="md" sx={{ mt: 8 }}>
       <Paper elevation={3}>
         <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
           <Box sx={{ width: '30%', p: 2 }}>

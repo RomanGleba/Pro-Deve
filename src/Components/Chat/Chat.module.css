@@ -1,0 +1,39 @@
+.chat-list {
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+  
+  .chat-message {
+    display: flex;
+    flex-direction: column;
+    padding: 100px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    max-width: 75%;
+    word-wrap: break-word;
+    position: relative;
+  }
+  
+  .self {
+    background-color: white;
+    align-self: flex-end;
+    margin-left: auto;
+  }
+  
+  .chat-message:not(.self) {
+    background-color: white;
+    align-self: flex-start;
+    margin-right: auto;
+  }
+  
+  .chat-message .MuiListItemText-root {
+    margin: 0;
+  }
+  
+  .chat-message .MuiIconButton-root {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+  
+  

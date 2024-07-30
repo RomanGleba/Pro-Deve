@@ -5,11 +5,11 @@ import Profile from './Components/Profile/Profile';
 import Music from './Components/Music/Music';
 import Login from './Components/Weblogin/Login';
 import Register from './Components/Weblogin/Register';
-import ProtectedRoute from './ProtectedRoute';
+import ProtectedRoute from './Configuration/ProtectedRoute';
 import News from './Components/News/News';
+import Chat from './Components/Chat/Chat'; 
 
-
-export const routing = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
@@ -31,6 +31,14 @@ export const routing = createBrowserRouter([
         ),
       },
       {
+        path: 'dialogs/:id', 
+        element: (
+          <ProtectedRoute>
+            <Chat />
+          </ProtectedRoute>
+        ),
+      },
+      {
         path: 'music',
         element: (
           <ProtectedRoute>
@@ -43,18 +51,17 @@ export const routing = createBrowserRouter([
         element: <Register />,
       },
       {
-        path: 'Login',
+        path: 'login',
         element: <Login />,
       },
       {
         path: 'news',
         element: (
-        <ProtectedRoute>
+          <ProtectedRoute>
             <News />
-            </ProtectedRoute>
+          </ProtectedRoute>
         ),
-      }
-     
+      },
     ],
   },
 ]);

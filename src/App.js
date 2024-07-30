@@ -1,16 +1,18 @@
 import React from 'react';
 import { RouterProvider } from 'react-router-dom';
 import './App.css';
-import { routing } from './routing';
-import { AuthProvider } from './AuthContext';
+import { router } from './routing'; 
+import { AuthProvider } from './Configuration/AuthContext';
+import { ChatProvider } from './Configuration/ChatContext'; 
 
 const App = () => {
   return (
     <AuthProvider>
-      <RouterProvider router={routing} />
+      <ChatProvider>
+        <RouterProvider router={router} />
+      </ChatProvider>
     </AuthProvider>
   );
 };
 
 export default App;
-

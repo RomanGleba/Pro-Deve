@@ -31,9 +31,10 @@ const Profile = ({ isAuthenticated }) => {
       <Container component="main" maxWidth="lg">
         <Box className={styles.container}>
           <Avatar
-            alt=""
+            alt="Profile Picture"
             src={profileImage}
             className={styles.avatar}
+            sx={{ width: 100, height: 100 }}
           />
           {isAuthenticated && (
             <Button variant="contained" component="label" className={styles.button}>

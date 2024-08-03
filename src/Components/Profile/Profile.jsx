@@ -8,12 +8,11 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import MyPosts from './MyPosts/MyPosts';
-import styles from './Profile.module.css'; // Імпортуємо CSS модуль
-
+import styles from './Profile.module.css'; 
 const theme = createTheme();
 
 const Profile = ({ isAuthenticated }) => {
-  const [profileImage, setProfileImage] = useState('/static/images/avatar/1.jpg'); // Дефолтне зображення профілю
+  const [profileImage, setProfileImage] = useState(''); 
 
   const handleImageUpload = (event) => {
     const file = event.target.files[0];

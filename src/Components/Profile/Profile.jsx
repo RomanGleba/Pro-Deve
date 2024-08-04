@@ -10,7 +10,7 @@ const Profile = () => {
     <Box className={styles.container}>
       <Avatar
         alt="Profile Picture"
-        src="https://via.placeholder.com/100"
+        src=""
         className={styles.avatar}
       />
       <Typography variant="h6">Roma</Typography>

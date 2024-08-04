@@ -1,3 +1,4 @@
+/* Основні стилі для Navbar */
 .nav {
     display: flex;
     flex-direction: row; 
@@ -8,20 +9,46 @@
     width: 100%; 
     position: fixed; 
     top: 0;
-    z-index: 1000; 
-    
-    }
+    z-index: 1000;
+    overflow-x: auto; /* Додає горизонтальну прокрутку для малих екранів */
+}
 
 /* s.item */
-    .item {
-        color: rgb(182, 34, 34);
-        transition: background-color 0.3s, color 0.3s; 
-        text-decoration: none;
-        color: white; 
-    }
+.item {
+    color: rgb(182, 34, 34);
+    transition: background-color 0.3s, color 0.3s; 
+    text-decoration: none;
+    color: white; 
+    padding: 10px 15px; /* Збільшена область кліку */
+    white-space: nowrap; /* Запобігає переносу тексту на новий рядок */
+}
 
 /* s.active */
-    .item.active {
-        color: gold;
+.item.active {
+    color: gold;
+}
+
+/* Медіа-запити для адаптації під різні розміри екранів */
+
+/* Стили для планшетів (ширина від 600px до 900px) */
+@media (max-width: 900px) {
+    .nav {
+        padding: 10px 5px;
     }
+
+    .item {
+        padding: 10px;
+    }
+}
+
+/* Стили для телефонів (ширина до 600px) */
+@media (max-width: 600px) {
+    .nav {
+        padding: 10px 5px;
+    }
+
+    .item {
+        padding: 10px;
+    }
+}
 

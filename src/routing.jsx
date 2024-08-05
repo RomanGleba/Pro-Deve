@@ -7,7 +7,8 @@ import Login from './Components/Weblogin/Login';
 import Register from './Components/Weblogin/Register';
 import ProtectedRoute from './Configuration/ProtectedRoute';
 import News from './Components/News/News';
-import Chat from './Components/Chat/Chat'; 
+import Chat from './Components/Chat/Chat';
+import Friends from './Components/Friends/Friends'; 
 
 export const router = createBrowserRouter([
   {
@@ -31,7 +32,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: 'dialogs/:id', 
+        path: 'dialogs/:id',
         element: (
           <ProtectedRoute>
             <Chat />
@@ -62,6 +63,15 @@ export const router = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
+      {
+        path: 'friends', 
+        element: (
+          <ProtectedRoute>
+            <Friends />
+          </ProtectedRoute>
+        ),
+      },
+      
     ],
   },
 ]);

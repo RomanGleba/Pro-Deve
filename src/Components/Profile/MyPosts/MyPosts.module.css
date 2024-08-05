@@ -1,2 +1,121 @@
-
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .posts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Стилі для форми додавання постів */
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .formContainer textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+    font-size: 16px;
+  }
+  
+  .formContainer input[type="file"] {
+    margin-bottom: 10px;
+  }
+  
+  .formContainer button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .formContainer button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Стилі для постів */
+  .postItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .postItem img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .postItem .content {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .postItem .actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .postItem .actions span {
+    cursor: pointer;
+    color: #007bff;
+  }
+  
+  .postItem .actions button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .postItem .actions button:hover {
+    background-color: #ff4500;
+  }
+  
+  /* Стилі для планшетів */
+  @media (min-width: 600px) and (max-width: 1024px) {
+    .formContainer textarea,
+    .formContainer input[type="file"],
+    .formContainer button,
+    .postItem {
+      width: 80%;
+    }
+  }
+  
+  /* Стилі для телефонів */
+  @media (max-width: 599px) {
+    .formContainer textarea,
+    .formContainer input[type="file"],
+    .formContainer button,
+    .postItem {
+      width: 100%;
+    }
+  }
+  
  

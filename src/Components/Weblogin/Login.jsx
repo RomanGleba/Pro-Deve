@@ -1,4 +1,3 @@
-// src/components/Login.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Login.module.css';
@@ -8,6 +7,7 @@ const Login = () => {
     username: '',
     password: ''
   });
+  const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -17,13 +17,28 @@ const Login = () => {
     });
   };
 
+  const validateForm = () => {
+    let formErrors = {};
+    if (!formData.username) formErrors.username = 'Username is required';
+    if (!formData.password) formErrors.password = 'Password is required';
+    return formErrors;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form Data:', formData);
-
-    // Умовне перенаправлення на сторінку Profile
-    if (formData.username && formData.password) {
-      navigate('/profile');
+    const formErrors = validateForm();
+    if (Object.keys(formErrors).length === 0) {
+      const registeredUser = JSON.parse(localStorage.getItem('user'));
+      if (!registeredUser) {
+        setErrors({ form: 'No registered user. Please register first.' });
+      } else if (registeredUser.username === formData.username && registeredUser.password === formData.password) {
+        console.log('Login successful');
+        navigate('/profile');
+      } else {
+        setErrors({ form: 'Invalid username or password' });
+      }
+    } else {
+      setErrors(formErrors);
     }
   };
 
@@ -39,6 +54,7 @@ const Login = () => {
           onChange={handleChange}
           className={styles.input}
         />
+        {errors.username && <span className={styles.error}>{errors.username}</span>}
       </div>
       <div className={styles.formGroup}>
         <label htmlFor="password" className={styles.label}>Password:</label>
@@ -50,7 +66,9 @@ const Login = () => {
           onChange={handleChange}
           className={styles.input}
         />
+        {errors.password && <span className={styles.error}>{errors.password}</span>}
       </div>
+      {errors.form && <div className={styles.error}>{errors.form}</div>}
       <button type="submit" className={styles.button}>Login</button>
     </form>
   );

@@ -42,3 +42,62 @@
 .item .actions button:hover {
   background-color: #ff4500;
 }
+
+/* Стилі для планшетів */
+@media (min-width: 600px) and (max-width: 1024px) {
+  .item {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .item img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .item .content {
+    margin-left: 20px;
+  }
+
+  .item .actions {
+    justify-content: flex-start;
+  }
+
+  .item .actions button {
+    margin-left: 10px;
+  }
+}
+
+/* Стилі для телефонів */
+@media (max-width: 599px) {
+  .item {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  .item .content {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .item .actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .item .actions span {
+    margin-bottom: 10px;
+  }
+
+  .item .actions button {
+    width: 100%;
+  }
+}

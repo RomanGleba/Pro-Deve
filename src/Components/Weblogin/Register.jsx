@@ -1,4 +1,3 @@
-// src/Register.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Register.module.css';
@@ -9,7 +8,7 @@ const Register = () => {
     email: '',
     password: ''
   });
-
+  const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -19,13 +18,35 @@ const Register = () => {
     });
   };
 
+  const validateForm = () => {
+    let formErrors = {};
+    if (!formData.username) formErrors.username = 'Username is required';
+    if (!formData.email) {
+      formErrors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      formErrors.email = 'Email is invalid';
+    }
+    if (!formData.password) formErrors.password = 'Password is required';
+    return formErrors;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Тут можна обробити дані форми, наприклад, відправити їх на сервер
-    console.log('Form Data:', formData);
-    
-    // При успішній реєстрації перенаправити на сторінку логіну
-    navigate('/login');
+    const formErrors = validateForm();
+    if (Object.keys(formErrors).length === 0) {
+      const registeredUser = JSON.parse(localStorage.getItem('user'));
+      if (registeredUser) {
+        setErrors({ form: 'User is already registered. Please log in.' });
+      } else {
+        console.log('Form Data:', formData);
+        // Збереження даних користувача в localStorage
+        localStorage.setItem('user', JSON.stringify(formData));
+        // Перенаправлення на сторінку логіну
+        navigate('/login');
+      }
+    } else {
+      setErrors(formErrors);
+    }
   };
 
   return (
@@ -40,6 +61,7 @@ const Register = () => {
           onChange={handleChange}
           className={styles.input}
         />
+        {errors.username && <span className={styles.error}>{errors.username}</span>}
       </div>
       <div className={styles.formGroup}>
         <label htmlFor="email" className={styles.label}>Email:</label>
@@ -51,6 +73,7 @@ const Register = () => {
           onChange={handleChange}
           className={styles.input}
         />
+        {errors.email && <span className={styles.error}>{errors.email}</span>}
       </div>
       <div className={styles.formGroup}>
         <label htmlFor="password" className={styles.label}>Password:</label>
@@ -62,7 +85,9 @@ const Register = () => {
           onChange={handleChange}
           className={styles.input}
         />
+        {errors.password && <span className={styles.error}>{errors.password}</span>}
       </div>
+      {errors.form && <div className={styles.error}>{errors.form}</div>}
       <button type="submit" className={styles.button}>Register</button>
     </form>
   );

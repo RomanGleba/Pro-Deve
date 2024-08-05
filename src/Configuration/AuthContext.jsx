@@ -2,22 +2,21 @@ import React, { createContext, useState, useContext } from 'react';
 
 const AuthContext = createContext();
 
-export const useAuth = () => useContext(AuthContext);
-
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [isRegistered, setIsRegistered] = useState(false);
 
-  const login = () => setIsAuthenticated(true);
-  const logout = () => setIsAuthenticated(false);
-  const register = () => setIsRegistered(true);
-  const resetPassword = (email) => {
-    console.log(`Password reset link sent to ${email}`);
+  const login = async () => {
+    // Ваш логін-логіка тут
+    setIsAuthenticated(true);
   };
 
+  const logout = () => setIsAuthenticated(false);
+
   return (
-    <AuthContext.Provider value={{ isAuthenticated, isRegistered, login, logout, register, resetPassword }}>
+    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
 };
+
+export const useAuth = () => useContext(AuthContext);

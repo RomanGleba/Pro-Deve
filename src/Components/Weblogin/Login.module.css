@@ -3,7 +3,7 @@
   flex-direction: column;
   width: 300px;
   margin: 0 auto;
-  padding: 430px;  
+  padding: 300px;  
 }
 
 .formGroup {
@@ -31,4 +31,36 @@
 
 .button:hover {
   background-color: #0056b3;
+}
+
+/* Стилі для планшетів */
+@media (min-width: 600px) and (max-width: 1024px) {
+  .form {
+    width: 80%;
+    padding: 130px;
+  }
+
+  .input {
+    padding: 12px;
+  }
+
+  .button {
+    padding: 12px;
+  }
+}
+
+/* Стилі для телефонів */
+@media (max-width: 599px) {
+  .form {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .input {
+    padding: 8px;
+  }
+
+  .button {
+    padding: 10px;
+  }
 }

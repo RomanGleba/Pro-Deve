@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import axios from 'axios';
-import styles from './Friends.module.css';
+import styles from './Friends.module.css';  
 
 const Friends = () => {
   const [users, setUsers] = useState([]);

@@ -18,33 +18,33 @@ export const router = createBrowserRouter([
       {
         path: 'profile',
         element: (
-          <ProtectedRoute>
+          
             <Profile />
-          </ProtectedRoute>
+         
         ),
       },
       {
         path: 'dialogs',
         element: (
-          <ProtectedRoute>
+          
             <Dialogs />
-          </ProtectedRoute>
+         
         ),
       },
       {
         path: 'dialogs/:id',
         element: (
-          <ProtectedRoute>
+        
             <Chat />
-          </ProtectedRoute>
+         
         ),
       },
       {
         path: 'music',
         element: (
-          <ProtectedRoute>
+       
             <Music />
-          </ProtectedRoute>
+          
         ),
       },
       {
@@ -58,17 +58,17 @@ export const router = createBrowserRouter([
       {
         path: 'news',
         element: (
-          <ProtectedRoute>
+          
             <News />
-          </ProtectedRoute>
+         
         ),
       },
       {
         path: 'friends', 
         element: (
-          <ProtectedRoute>
+          
             <Friends />
-          </ProtectedRoute>
+          
         ),
       },
       

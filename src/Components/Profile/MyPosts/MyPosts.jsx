@@ -2,7 +2,9 @@ import React from 'react';
 import s from './MyPosts.module.css';
 import Post from './Posts/Post';
 
-const MyPosts = ({}) => {
+const MyPosts = (props) => {
+
+  
 
 
 let Postchat = [
@@ -34,6 +36,7 @@ let PostchatElements = Postchat.map(post => (
 return (
   <div>
     <div>
+      <h3>Chat</h3>
       <textarea></textarea>
       <button>Add post</button>
     </div>

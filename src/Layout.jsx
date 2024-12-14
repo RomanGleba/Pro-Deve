@@ -5,7 +5,7 @@ import Header from './Components/Header/Header';
 import './App.css';
 const Layout = () => {
     return (
-        <div className="app-wrapper">
+        <div className="app-wrapper-content">
        
         <Navbar />
         <div className="content">

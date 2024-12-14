@@ -4,31 +4,26 @@ import s from './Post.module.css';
 const Post = (props) => {
     const [likes, setLikes] = useState(props.likesCount || 0);
     const [dislikes, setDislikes] = useState(0);
-    const [isLiked, setIsLiked] = useState(false);
-    const [isDisliked, setIsDisliked] = useState(false);
+    const [userReaction, setUserReaction] = useState(null); // null - нема реакції, 'like' - лайк, 'dislike' - дизлайк
 
     const Like = () => {
-        if (!isLiked && !isDisliked) {
-            setLikes(likes + 1);
-            setIsLiked(true);
-        } else if (isDisliked) {
+        if (userReaction === 'dislike') {
             setLikes(likes + 1);
             setDislikes(dislikes - 1);
-            setIsLiked(true);
-            setIsDisliked(false);
+        } else if (userReaction !== 'like') {
+            setLikes(likes + 1);
         }
+        setUserReaction('like');
     };
 
     const Dislike = () => {
-        if (!isDisliked && !isLiked) {
-            setDislikes(dislikes + 1);
-            setIsDisliked(true);
-        } else if (isLiked) {
+        if (userReaction === 'like') {
             setLikes(likes - 1);
             setDislikes(dislikes + 1);
-            setIsLiked(false);
-            setIsDisliked(true);
+        } else if (userReaction !== 'dislike') {
+            setDislikes(dislikes + 1);
         }
+        setUserReaction('dislike');
     };
 
     return (
@@ -40,8 +35,8 @@ const Post = (props) => {
                 </div>
             </div>
             <div className={s.likesDislikes}>
-                <button onClick={Like} disabled={isLiked}>Like</button> {likes}
-                <button onClick={Dislike} disabled={isDisliked}>Dislike</button> {dislikes}
+                <button onClick={Like} disabled={userReaction === 'like'}>Like</button> {likes}
+                <button onClick={Dislike} disabled={userReaction === 'dislike'}>Dislike</button> {dislikes}
             </div>
         </div>
     );

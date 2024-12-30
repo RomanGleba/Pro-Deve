@@ -1,32 +1,32 @@
-// dislikesReducer.js
+// dislikeReducer.js
+import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
-    posts: []
-};
+const dislikeSlice = createSlice({
+    name: 'dislikes',
+    initialState: {
+        dislikedPosts: [], // масив постів, які мають дизлайки
+    },
+    reducers: {
+        dislikePost: (state, action) => {
+            const postId = action.payload;
+            if (!state.dislikedPosts.includes(postId)) {
+                state.dislikedPosts.push(postId); // додаємо дизлайк на пост
+            }
+        },
+        removeDislike: (state, action) => {
+            const postId = action.payload;
+            state.dislikedPosts = state.dislikedPosts.filter(id => id !== postId); // видаляємо дизлайк з поста
+        },
+        // Action для скасування дизлайку при натисканні лайка
+        removeDislikeWhenLike: (state, action) => {
+            const postId = action.payload;
+            state.dislikedPosts = state.dislikedPosts.filter(id => id !== postId); // видаляємо дизлайк
+        },
+    },
+});
 
-const dislikesReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case 'INCREMENT_DISLIKE':
-            return {
-                ...state,
-                posts: state.posts.map(post =>
-                    post.id === action.payload
-                        ? { ...post, dislikesCount: post.dislikesCount + 1 }
-                        : post
-                )
-            };
-        case 'DECREMENT_DISLIKE':
-            return {
-                ...state,
-                posts: state.posts.map(post =>
-                    post.id === action.payload
-                        ? { ...post, dislikesCount: post.dislikesCount - 1 }
-                        : post
-                )
-            };
-        default:
-            return state;
-    }
-};
+export const { dislikePost, removeDislike, removeDislikeWhenLike } = dislikeSlice.actions;
 
-export default dislikesReducer;
+export default dislikeSlice.reducer;
+
+

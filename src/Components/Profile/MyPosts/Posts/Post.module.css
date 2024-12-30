@@ -1,11 +1,52 @@
-.item {
-    color: rgb(80, 255, 124);
-    }
-    
-      .item img {
-        width: 50px;
-        height: 50px;
-        border-radius: 3px;
-        
-      }
- 
+.item img {
+    width: 60px; /* Збільшення розміру зображення */
+    height: 60px;
+    border-radius: 50%; /* Округлення зображення для ефекту кола */
+    margin-right: 15px; /* Відступ справа для розділення з текстом */
+    object-fit: cover; /* Обрізаємо зображення так, щоб воно заповнювало коло */
+    border: 3px solid #4caf50; /* Тонка рамка навколо зображення */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавні переходи для ефектів */
+}
+
+.item img:hover {
+    transform: scale(1.1); /* Збільшення зображення при наведенні */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Легка тінь при наведенні */
+}
+
+
+.reactionButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Анімація при наведенні: збільшення іконки */
+.reactionButton:hover {
+    color: #4caf50; /* Зелений колір при наведенні */
+    transform: scale(1.2); /* Збільшення іконки */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тінь при наведенні */
+}
+
+/* Анімація при натисканні: зменшення іконки */
+.reactionButton:active {
+    transform: scale(0.9); /* Схлопування іконки */
+}
+
+/* Зміна стилю для активної кнопки (лайк або дизлайк) */
+.reactionButton.active {
+    color: #2196f3; /* Синій колір для активного лайка або дизлайка */
+    transform: scale(1.1); /* Збільшення для активної кнопки */
+}
+
+/* Вимкнена кнопка - не дозволяється натискати, але курсор не змінюється */
+.reactionButton:disabled {
+    color: #cccccc; /* Колір для вимкненої кнопки */
+    cursor: default; /* Не забороняємо курсор на вимкненій кнопці */
+}
+
+/* Вимкнена кнопка (уже натиснута) без змін в курсорі при наведенні */
+.reactionButton:disabled:hover {
+    color: #cccccc; /* Залишаємо колір без змін */
+    box-shadow: none; /* Вимикаємо тінь */
+}

@@ -1,24 +1,14 @@
-import { createStore } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
+import postsReducer from './Reducer/postsContent';
+import likeReducer from "./Reducer/likeReducer";
+import dislikeReducer from "./Reducer/dislikeReducer";
 
-
-const initialState = {
-    likes: 0,
-    dislikes: 0,
-};
-
-
-const rootReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case 'INCREMENT_LIKE':
-            return { ...state, likes: state.likes + 1 };
-        case 'INCREMENT_DISLIKE':
-            return { ...state, dislikes: state.dislikes + 1 };
-        default:
-            return state;
-    }
-};
-
-
-const store = createStore(rootReducer);
+const store = configureStore({
+    reducer: {
+        posts: postsReducer,
+        likes: likeReducer,
+        dislikes: dislikeReducer,
+    },
+});
 
 export default store;

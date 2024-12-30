@@ -1,13 +1,12 @@
 import { Outlet } from 'react-router-dom'
 import React from 'react';
-import Navbar from './Components/Navbar/Navbar';
-import Header from './Components/Header/Header';
+import Sidebar from './Components/Sidebar/Sidebar';
 import './App.css';
 const Layout = () => {
     return (
-        <div className="app-wrapper-content">
+        <div className="app-wrapper-">
        
-        <Navbar />
+        <Sidebar />
         <div className="content">
           <Outlet />
         </div>

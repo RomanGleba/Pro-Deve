@@ -1,2 +1,47 @@
+.buttonCustom {
+    padding: 12px 24px; /* Однакові відступи для прямокутної форми */
+    border-radius: 80px; /* Заокруглені кути */
+    font-size: 10px; /* Розмір шрифту */
+    font-weight: bold; /* Жирний текст */
+    text-transform: none; /* Виключаємо автоматичне перетворення на великі літери */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тінь кнопки */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Плавні переходи для кольору та тіні */
+}
 
- 
+/* Стиль для кнопки при наведенні */
+.buttonCustom:hover {
+    background-color: #0056b3; /* Зміна кольору при наведенні */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Зміна тіні при наведенні */
+}
+
+
+
+.textFieldCustom {
+    width: 20%;
+    margin-bottom: 16px;
+}
+
+.textFieldCustom input {
+    font-size: 14px;
+    padding: 10px;
+}
+
+.textFieldCustom textarea {
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: lavender;
+    transition: all 0.3s ease;
+}
+
+.textFieldCustom textarea:focus {
+    border-color: #0056b3;
+    background-color: silver;
+}
+
+.textFieldCustom label {
+    font-size: 16px;
+    color: #333;
+}
+

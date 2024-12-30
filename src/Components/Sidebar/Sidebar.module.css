@@ -1,0 +1,36 @@
+.sidebarHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex; /* Горизонтальне вирівнювання */
+    align-items: center; /* Вирівнювання по вертикалі */
+    justify-content: flex-start; /* Елементи розташовуються зліва */
+    width: 100%; /* Ширина контейнера */
+    height: 60px; /* Висота заголовка */
+    background-color: #f4f4f4; /* Світло-сірий фон */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тінь для верхньої панелі */
+    padding: 0 10px; /* Внутрішні відступи */
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Відступ між логотипом і кнопкою */
+}
+
+.logo img {
+    width: 40px; /* Розмір логотипу */
+    height: 40px;
+}
+
+.sidebarButton {
+    color: #555;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.sidebarButton:hover {
+    transform: scale(1.1); /* Невелике збільшення при наведенні */
+    color: #000;
+}
